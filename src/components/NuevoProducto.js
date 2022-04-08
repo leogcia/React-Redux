@@ -1,4 +1,34 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { crearNuevoProductoAction } from "../actions/productoActions";
+
+
+
 function NuevoProducto() {
+
+    const dispatch = useDispatch();
+    const [nombre, setNombre] = useState('');
+    const [precio, setPrecio] = useState(0);
+
+    // Mandar llamar el action de productoAction
+    const agregarProducto = (producto) => dispatch( crearNuevoProductoAction(producto) );
+
+    const submitNuevoProducto = e => {
+        e.preventDefault()
+        //Validar formulario
+        if(nombre.trim() === '' || precio <= 0) {
+            return;
+        }
+        //si no hay errores
+
+        //crear el nuevo producto
+        agregarProducto({
+            nombre,
+            precio
+        });
+    };
+
+
     return (
         <div className="row justify-content-center">
             <div className="cl-md-8">
@@ -6,7 +36,9 @@ function NuevoProducto() {
                     <div className="card-body">
                         <h2 className="text-center mb-4 font-weight-bold">Agregar nuevo Producto</h2>
 
-                        <form>
+                        <form
+                            onSubmit={submitNuevoProducto}
+                        >
                             <div className="form-group">
                                 <label htmlFor="nombre">Nombre Producto</label>
                                 <input
@@ -14,6 +46,8 @@ function NuevoProducto() {
                                     type='text'
                                     className="form-control"
                                     placeholder="Nombre del Producto."
+                                    value={ nombre }
+                                    onChange={ e => setNombre(e.target.value) }
                                 />
                             </div>
 
@@ -24,6 +58,8 @@ function NuevoProducto() {
                                     type='number'
                                     className="form-control"
                                     placeholder="Precio del Producto."
+                                    value={ precio }
+                                    onChange={ e => setPrecio(Number(e.target.value)) }
                                 />
                             </div>
 
