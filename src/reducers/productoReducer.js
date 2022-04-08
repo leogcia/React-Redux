@@ -10,7 +10,23 @@ const initialState = {
 
 export default function ( state = initialState, action ) {
     switch (action.type) {
-        
+        case types.agregarProducto:
+            return {
+                ...state,
+                loading: true
+            }
+        case types.agregarProductoExito:
+            return {
+                ...state,
+                loading: false,
+                productos: [...state.productos, action.payload]
+            }
+        case types.agregarProductoError:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
         default:
             return state;
     }
