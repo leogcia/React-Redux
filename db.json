@@ -1,29 +1,54 @@
 {
-    "productos": [
-      {
-        "id": 1,
-        "nombre": "Jugo de Zanahoria",
-        "precio": "31111"
-      },
-      {
-        "id": 2,
-        "nombre": "Jugo de Naranja",
-        "precio": "1"
-      },
-      {
-        "nombre": "Jugo de Naranja",
-        "precio": "300",
-        "id": 3
-      },
-      {
-        "nombre": "Rib Eye 800g",
-        "precio": "200",
-        "id": 4
-      },
-      {
-        "nombre": "Jugo de Fresa",
-        "precio": "200",
-        "id": 5
-      }
-    ]
-  }
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Jugo de Zanahoria",
+      "precio": "31111"
+    },
+    {
+      "id": 2,
+      "nombre": "Jugo de Naranja",
+      "precio": "1"
+    },
+    {
+      "nombre": "Jugo de Naranja",
+      "precio": "300",
+      "id": 3
+    },
+    {
+      "nombre": "Rib Eye 800g",
+      "precio": "200",
+      "id": 4
+    },
+    {
+      "nombre": "Jugo de Fresa",
+      "precio": "200",
+      "id": 5
+    },
+    {
+      "nombre": "Pizza",
+      "precio": 300,
+      "id": 6
+    },
+    {
+      "nombre": "Pasta",
+      "precio": 120,
+      "id": 7
+    },
+    {
+      "nombre": "Camarón al mojo de ajo",
+      "precio": 250,
+      "id": 8
+    },
+    {
+      "nombre": "Fetuchini",
+      "precio": 120,
+      "id": 9
+    },
+    {
+      "nombre": "Pizza  Margarita",
+      "precio": 150,
+      "id": 10
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { crearNuevoProductoAction } from "../actions/productoActions";
 
 
@@ -7,8 +8,13 @@ import { crearNuevoProductoAction } from "../actions/productoActions";
 function NuevoProducto() {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [nombre, setNombre] = useState('');
     const [precio, setPrecio] = useState(0);
+
+    const cargando = useSelector( state => state.productos.loading );
+    const error = useSelector( state => state.productos.error );
+
 
     // Mandar llamar el action de productoAction
     const agregarProducto = (producto) => dispatch( crearNuevoProductoAction(producto) );
@@ -26,6 +32,8 @@ function NuevoProducto() {
             nombre,
             precio
         });
+        // Reedirecciono al home:
+        navigate('/')
     };
 
 
@@ -68,6 +76,9 @@ function NuevoProducto() {
                                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
                             >Agregar</button>
                         </form>
+
+                        { cargando ? <p>Cargando...</p> : null }
+                        { error ? <p className="alert alert-danger p2 mt-4 text-center"> ¡Hubo un error!</p> : null }
                     </div>
                 </div>
             </div>
