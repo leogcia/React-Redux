@@ -15,4 +15,7 @@ export const types = {
     comenzarEdicionProducto: 'Comenzar Edicion Producto',
     productoEditadoExito: 'Producto Editado Exito',
     productoEditadoError: 'Producto Editado Error',
+
+    mostarAlerta: 'Mostrar Alerta',
+    ocultarAlerta: 'Ocultar Alerta'
 }

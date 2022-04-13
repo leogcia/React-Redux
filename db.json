@@ -19,6 +19,11 @@
       "nombre": "Pizza",
       "precio": 300,
       "id": 6
+    },
+    {
+      "nombre": "Jugo de Toronja",
+      "precio": 20,
+      "id": 7
     }
   ]
 }
