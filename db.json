@@ -1,69 +1,24 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
-    },
-    {
-      "id": 2,
       "nombre": "Jugo de Naranja",
-      "precio": "1"
-    },
-    {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
+      "precio": 25,
       "id": 3
     },
     {
       "nombre": "Rib Eye 800g",
-      "precio": "200",
+      "precio": 500,
       "id": 4
     },
     {
       "nombre": "Jugo de Fresa",
-      "precio": "200",
+      "precio": 200,
       "id": 5
     },
     {
       "nombre": "Pizza",
       "precio": 300,
       "id": 6
-    },
-    {
-      "nombre": "Pasta",
-      "precio": 120,
-      "id": 7
-    },
-    {
-      "nombre": "Camarón al mojo de ajo",
-      "precio": 250,
-      "id": 8
-    },
-    {
-      "nombre": "Fetuchini",
-      "precio": 120,
-      "id": 9
-    },
-    {
-      "nombre": "Pizza  Margarita",
-      "precio": 150,
-      "id": 10
-    },
-    {
-      "nombre": "Pulpo a la diabla",
-      "precio": 300,
-      "id": 11
-    },
-    {
-      "nombre": "Spaguetti Alfredo",
-      "precio": 150,
-      "id": 12
-    },
-    {
-      "nombre": "Penne",
-      "precio": 200,
-      "id": 13
     }
   ]
 }

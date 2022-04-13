@@ -76,3 +76,80 @@ const descargarProductosError = () => ({
     type: types.descargaProductosError,
     payload: true
 });
+
+// Selecciona y elimina el producto:
+export const borrarProductoAction = ( id ) => {
+    return async (dispatch) => {
+        dispatch( obtenerProductoEliminar(id) )
+        
+        try {
+            await clienteAxios.delete(`/productos/${id}`);
+            dispatch( eliminarProductoExito() )
+            // Si se elimina, mostrar alerta:
+            Swal.fire(
+                '¡Eliminado!',
+                'El producto se eliminó correctamente.',
+                'success'
+            )
+
+        } catch (error) {
+            console.log(error)
+            dispatch( eliminarProductoError() )
+        }
+    }
+};
+
+const obtenerProductoEliminar = id => ({
+    type: types.obtenerProductoEliminar,
+    payload: id
+});
+
+const eliminarProductoExito = () => ({
+    type: types.productoEliminadoExito
+});
+
+const eliminarProductoError = () => ({
+    type: types.productoEliminadoError,
+    payload: true
+});
+
+// Colocar producto en edición:
+export const obtenerProductoEditar = producto => {
+    return (dispatch) => {
+        dispatch( obtenerProductoEditarAction( producto ) )
+    }
+};
+
+const obtenerProductoEditarAction = producto => ({
+    type:types.obtenerProductoEditar,
+    payload: producto
+});
+
+// Edita un regsitro en la api y state:
+export const editarProductoAction = producto => {
+    return async (dispatch) => {
+        dispatch( editarProducto() )
+        try {
+            await clienteAxios.put(`/productos/${producto.id}`, producto);
+            dispatch( editarProductoExito(producto) );
+
+        } catch (error) {
+            console.log(error)
+            dispatch( editarProductoError() )
+        }
+    }
+};
+
+const editarProducto = () => ({
+    type: types.comenzarEdicionProducto,
+});
+
+const editarProductoExito = ( producto ) => ({
+    type: types.productoEditadoExito,
+    payload: producto
+});
+
+const editarProductoError = () => ({
+    type: types.productoEditadoError,
+    payload: true
+});
