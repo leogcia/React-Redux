@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 export const crearNuevoProductoAction = ( producto ) => {
     return async (dispatch) => {
         dispatch( agregarProducto())
-
         try {
             // insertar en la API:
             await clienteAxios.post('/productos', producto);
@@ -46,4 +45,34 @@ const agregarProductoExito = ( producto ) => ({
 const agregarProductoError = (estado) => ({
     type: types.agregarProductoError,
     payload: estado
+});
+
+
+//Funcion que descarga los productos de la base de datos:
+export const obtenerProductosAction = () => {
+    return async (dispatch) => {
+        dispatch( descargarProductos() );
+        try {
+            const respuesta =  await clienteAxios('/productos');
+            dispatch( descargarProductosExitosa(respuesta.data) )
+        } catch (error) {
+            console.log(error)
+            dispatch( descargarProductosError() )
+        }
+    }
+};
+
+const descargarProductos = () => ({
+    type: types.comenzarDescargaProductos,
+    payload: true
+});
+
+const descargarProductosExitosa = ( productos ) => ({
+    type: types.descargaProductosExito,
+    payload: productos
+});
+
+const descargarProductosError = () => ({
+    type: types.descargaProductosError,
+    payload: true
 });

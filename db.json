@@ -49,6 +49,21 @@
       "nombre": "Pizza  Margarita",
       "precio": 150,
       "id": 10
+    },
+    {
+      "nombre": "Pulpo a la diabla",
+      "precio": 300,
+      "id": 11
+    },
+    {
+      "nombre": "Spaguetti Alfredo",
+      "precio": 150,
+      "id": 12
+    },
+    {
+      "nombre": "Penne",
+      "precio": 200,
+      "id": 13
     }
   ]
 }
